@@ -1,4 +1,4 @@
-input_file = open("input.txt", "r")
+input_file = open("input.txt")
 
 elves = []
 elf = []
@@ -7,17 +7,17 @@ sums = []
 for num in input_file.readlines():
     if num != "\n":
         elf.append(int(num))
-    
+
     else:
         elves.append(elf)
         elf = []
-        
+
 for elf in elves:
     sum = 0
     for calories in elf:
         sum += calories
     sums.append(sum)
-    
+
 sums.sort()
 
 res1 = max(sums)
